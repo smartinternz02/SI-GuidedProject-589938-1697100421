@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TripShield</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <style>
+    /* Add your CSS code here */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 80%;
+      margin: auto;
+    }
+
+    .header {
+      background-color: #1a75ff;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .navbar {
+      margin-left: auto;
+    }
+
+   
+    .navbar a:hover {
+      background-color: #3399ff;
+    }
+
+    .navbar a.right {
+      float: right;
+    }
+
+    .main {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .form {
+      width: 60%;
+      padding: 20px;
+    }
+
+    .form h2 {
+      color: #1a75ff;
+      margin-bottom: 10px;
+    }
+
+    .form p {
+      color: #666666;
+      margin-bottom: 20px;
+    }
+
+    .form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form input, .form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none; /* Remove border around input and select elements */
+      background-color: #f5f5f5; /* Add a background color */
+    }
+
+    .form input[type="radio"], .form input[type="checkbox"] {
+      width: auto;
+      display: inline-block;
+    }
+
+    .form input[type="submit"] {
+      background-color: #1a75ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .form input[type="submit"]:hover {
+      background-color: #3399ff;
+    }
+
+    .image {
+      width: 30%;
+      padding: 20px;
+    }
+
+    .globe {
+      width: 100%;
+      height: auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      .main {
+        flex-direction: column;
+      }
+
+      .form, .image {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>TripShield</h1>
+      <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#" class="right">Login</a>
+      </div>
+    </div>
+    <div class="main">
+      <div class="form">
+        <h2>Travel Insurance Prediction</h2>
+        <p>Please fill the details</p>
+        <form action="/predict" method="post">
+          <label for="age">Age</label>
+          <input type="number" id="age" name="Age" min="18" max="100" required>
+          <label for="employment">Employment Type</label>
+          <select id="employment" name="EmploymentType" required>
+            <option value="private">Private Sector/Self Employed</option>
+            <option value="public">Public Sector/Government</option>
+            <option value="student">Student</option>
+            <option value="retired">Retired</option>
+            <option value="unemployed">Unemployed</option>
+          </select>
+          <label for="graduated">Graduated or Not</label>
+          <input type="radio" id="yes" name="graduated" value="yes" checked>
+          <label for="yes">Yes</label>
+          <input type="radio" id="no" name="graduated" value="no">
+          <label for="no">No</label>
+          <label for="income">Annual Income</label>
+          <input type="number" id="income" name="AnnualIncome" min="0" max="1000000" required>
+          <label for="family">Family Members</label>
+          <input type="number" id="Family" name="FamilyMembers" min="0" max="10" required>
+          <label for="diseases">Chronic Diseases</label>
+          <input type="checkbox" id="diseases" name="ChronicDiseases" value="yes">
+          <label for="diseases">Yes</label>
+          <label for="flyer">Frequent Flyer</label>
+          <input type="checkbox" id="flyer" name="FrequentFlyer" value="yes">
+          <label for="flyer">Yes</label>
+          <label for="abroad">Ever Traveled Abroad</label>
+          <input type="checkbox" id="abroad" name="EverTravelledAbroad" value="yes">
+          <label for="abroad">Yes</label>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+      <div class="image">
+        <img src="./static/globe.jpg">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
